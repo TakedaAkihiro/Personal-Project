@@ -38,8 +38,8 @@ def read_temp():
 myMQTTClient = AWSIoTMQTTClient("Raspberry_Pi")
 
 # MQTTクライアントの設定
-myMQTTClient.configureEndpoint("a1zgqp33rfoox1-ats.iot.ap-northeast-1.amazonaws.com", 443)
-myMQTTClient.configureCredentials("/home/pi/Parsonar-Project/Personal-Project/cert/AmazonRootCA1.pem", "/home/pi/Parsonar-Project/Personal-Project/cert/af5b640a0a-private.pem.key", "/home/pi/Parsonar-Project/Personal-Project/cert/af5b640a0a-certificate.pem.crt")
+myMQTTClient.configureEndpoint("", 443)
+myMQTTClient.configureCredentials("", "", "")
 myMQTTClient.configureOfflinePublishQueueing(-1)
 myMQTTClient.configureDrainingFrequency(2)
 myMQTTClient.configureConnectDisconnectTimeout(10)
@@ -61,7 +61,7 @@ try:
                    "sk_date":"{0:%Y-%m-%d}".format(now),
                    "sk_time":"{0:%H:%M:%S}".format(now),
                    "microsecond":now.microsecond}
-        myMQTTClient.publish("awsiot/test", json.dumps(message), 0)
+        myMQTTClient.publish("", json.dumps(message), 0)
         sleep(1)
 
 except KeyboardInterrupt:
