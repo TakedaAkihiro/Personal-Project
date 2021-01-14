@@ -47,7 +47,7 @@ def loop():
     while True:
         d = read_temp()
         if d < 20:
-            line_notify_token = '0yVBdM0NcPUd1Qn3reLmrcWrQk8sV1R6WxUNUHoFpDv'
+            line_notify_token = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
             line_notify_api = 'https://notify-api.line.me/api/notify'
             message = '室温が低いですね。エアコンをいれてはいかがでしょうか？'
             payload = {'message': message}
